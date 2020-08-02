@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Assignment_OnlineShopping.Models.Product>
+
+@{
+    ViewBag.Title = "Order";
+}
+
+<h2>Order Page</h2>
+
+
+<div class="table">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4" style="border : 2px solid">
+            <div style="text-align:center; border-bottom:2px solid">
+                <div>
+                    @Html.DisplayNameFor(model => model.ProductID) :
+                    @Html.DisplayFor(modelItem => item.ProductID)
+
+                </div>
+                @Html.DisplayNameFor(model => model.Name) :
+                @Html.DisplayFor(modelItem => item.Name)
+
+            </div>
+            <div>
+                @*@Html.DisplayNameFor(model => model.ImageFile)*@
+                <img src="~/Content/Images/Products/@item.ImageFile" />
+            </div>
+            <div>
+                @Html.DisplayNameFor(model => model.ShortDescription) :
+                @Html.DisplayFor(modelItem => item.ShortDescription)
+            </div>
+            <div>
+                @Html.DisplayNameFor(model => model.UnitPrice) :
+                @Html.DisplayFor(modelItem => item.UnitPrice)
+            </div>
+            <div>
+                @Html.DisplayNameFor(model => model.OnHand) :
+                @Html.DisplayFor(modelItem => item.OnHand)
+            </div>
+            <div class="col-md-4" style="text-align:right;margin-bottom:10px;margin-right:2px; border-top:2px solid maroon;padding:2px"> 
+                <input type="button" name="Add To Cart" value="Add To Cart" class="btn btn-primary" itemid="@item.ProductID" id="AddToCart" onclick="AddToCart()"/>
+            </div>
+        </div>
+
+    }
+
+
+
+
+
+
+
+
+</div>
+@*@Html.DisplayNameFor(model => model.ShortDescription)
+
+    @Html.DisplayNameFor(model => model.LongDescription)
+
+    @Html.DisplayNameFor(model => model.CategoryID)
+
+    @Html.DisplayNameFor(model => model.ImageFile)
+
+    @Html.DisplayNameFor(model => model.UnitPrice)
+
+    @Html.DisplayNameFor(model => model.OnHand)
+
+    @Html.DisplayNameFor(model => model.ShortDescription)
+
+    @Html.DisplayFor(modelItem => item.ShortDescription)
+
+    @Html.DisplayFor(modelItem => item.LongDescription)
+
+    @Html.DisplayFor(modelItem => item.CategoryID)
+
+    @Html.DisplayFor(modelItem => item.ImageFile)
+
+    @Html.DisplayFor(modelItem => item.UnitPrice)
+
+    @Html.DisplayFor(modelItem => item.OnHand)s*@
+
+
+

@@ -3,17 +3,17 @@
 @{
     ViewBag.Title = "Contact";
 }
-<img class=".img" src="~/Content/Images/banner.jpg" alt="Halloween" />
+<img id="img" src="~/Content/Images/banner.jpg" alt="Halloween" />
 <style>
     ul {
         list-style-type: none;
-        margin: 0;
+        margin: -10px;
         padding: 0;
         width: 200px;
         
         background-color: #f1f1f1;
     }
-    .img {
+    #img {
         display: block;
         margin-left: auto;
         margin-right: auto;
@@ -25,6 +25,7 @@
         width: 50%;
         border: 1px solid orange;
         padding: 10px;
+
     }
 
 
@@ -33,6 +34,7 @@
         color: orangered;
         padding: 8px 16px;
         text-decoration: none;
+
     }
 
         /* Change the link color on hover */
@@ -48,19 +50,26 @@
 </style>
 
 
-<h2>Contact Us</h2>
+
 <div class="center">
+    <h1>Contact Us</h1>
     <p>Email: @Model.Email</p>
     <p>Phone: @Model.Phone</p>
     <p>Fax: @Model.Fax</p>
     <p>Address: @Model.Address</p>
     <p>Facebook:@Model.SocialMediaUrls</p>
+    @*<p>
+        @foreach (string url in )
+        {
+            <a href="@url.to" target="blank">Social Media</a><br/>
+        }
+</p>*@
 </div>
 <ul>
 
     <li>@Html.ActionLink("Home", "Index")</li>
-    <li>@Html.ActionLink("Order", "Contact")</li>
-    <li>@Html.ActionLink("Cart", "Contact")</li>
+    <li>@Html.ActionLink("Order", "../Order/Order")</li>
+    <li>@Html.ActionLink("Cart", "../Order/Cart")</li>
     <li>@Html.ActionLink("Contact Us", "Contact")</li>
 
 </ul>
